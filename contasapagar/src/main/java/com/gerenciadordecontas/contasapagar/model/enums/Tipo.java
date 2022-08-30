@@ -1,5 +1,8 @@
 package com.gerenciadordecontas.contasapagar.model.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Tipo {
     LUZ,
     AGUA,

@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "gerenciador")
 
@@ -43,6 +42,6 @@ public class ContasaPagarModel {
     @Column(length = 20)
     private LocalDateTime dataPagamento;
     @Column
-    @Enumerated (value = EnumType.STRING)
+    @Enumerated(value = EnumType.STRING)
     private Status statusPag;
 }
