@@ -42,5 +42,7 @@ public class ContasaPagarModel {
 
     @Column(length = 20)
     private LocalDateTime dataPagamento;
-
+    @Column
+    @Enumerated (value = EnumType.STRING)
+    private Status statusPag;
 }

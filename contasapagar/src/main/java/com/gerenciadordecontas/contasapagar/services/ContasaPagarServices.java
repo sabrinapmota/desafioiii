@@ -6,6 +6,9 @@ import com.gerenciadordecontas.contasapagar.repository.ContasaPagarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,26 +34,17 @@ public class ContasaPagarServices {
         } else {
             contasaPagarModel.setStatus(Status.AGUARDANDO);
         }
-        contasaPagarModel.getId();
-        contasaPagarModel.getDataVencimento();
-        contasaPagarModel.getNome();
-        contasaPagarModel.getTipo();
-        contasaPagarModel.getValor();
         return contasaPagarRepository.save(contasaPagarModel);
     }
 
     public ContasaPagarModel alterarContas(ContasaPagarModel contasaPagarModel) {
-
-        if (contasaPagarModel.getStatus().equals(Status.PAGO)) {
-            LocalDateTime dataAtual = LocalDateTime.now();
-            contasaPagarModel.setDataPagamento(dataAtual);
+        ContasaPagarModel alteracaoConta = contasaPagarRepository.findById(contasaPagarModel.getId()).get();
+        if (contasaPagarModel.getStatus() == Status.PAGO) {
+            alteracaoConta.setDataPagamento(LocalDateTime.now(ZoneId.of("UTC-03:00")));
+            alteracaoConta.setStatus(Status.PAGO);
         }
 
-        contasaPagarModel.getDataPagamento();
-        contasaPagarModel.getValor();
-        contasaPagarModel.getTipo();
-        contasaPagarModel.getStatus();
-        return contasaPagarRepository.save(contasaPagarModel);
+        return contasaPagarRepository.save(alteracaoConta);
     }
 
     public void deletarcontas(Long id) {
