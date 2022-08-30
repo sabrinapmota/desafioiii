@@ -10,5 +10,5 @@ import java.util.List;
 public interface ContasaPagarRepository extends JpaRepository<ContasaPagarModel, Long> {
     public List<ContasaPagarModel> findByTipo(Tipo tipo);
 
-    public List<ContasaPagarModel> findbyStatus(Status status);
+    public List<ContasaPagarModel> findByStatus(Status status);
 }

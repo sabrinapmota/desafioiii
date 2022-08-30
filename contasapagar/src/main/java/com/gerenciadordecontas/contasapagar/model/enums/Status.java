@@ -3,7 +3,7 @@ package com.gerenciadordecontas.contasapagar.model.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
+
 @Getter
 public enum Status {
     PAGO,
