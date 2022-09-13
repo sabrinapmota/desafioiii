@@ -11,10 +11,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "ESTADO_TB")
-public class Estado {
+public class EstadoModel {
 @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEstado;
+    private Long idEstadoID;
 
 @Column(length = 2, nullable = false)
     private String uf;
