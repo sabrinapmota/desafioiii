@@ -1,5 +1,6 @@
 package com.gerenciadordecontas.contasapagar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -29,4 +30,5 @@ private LocalDate dataNascimento;
     @Column(length = 20, nullable = false)
     @Email
     private String email;
+
 }

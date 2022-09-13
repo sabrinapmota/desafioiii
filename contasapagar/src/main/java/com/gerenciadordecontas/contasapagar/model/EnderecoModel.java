@@ -9,23 +9,24 @@ import javax.persistence.*;
 
 
 @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Entity
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Table(name = "ENDERECO_TB")
 
-public class EnderecoModel{
-@Id
+public class EnderecoModel {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idEndereco;
 
     @Column(length = 100, nullable = false)
     String lougradouro;
 
-@Column(length = 11, nullable = false)
+    @Column(length = 11, nullable = false)
     private String cep;
 
-@Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false)
     private String pontoReferencia;
 }
 
