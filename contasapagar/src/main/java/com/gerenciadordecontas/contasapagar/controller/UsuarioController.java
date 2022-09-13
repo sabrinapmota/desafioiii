@@ -11,19 +11,33 @@ import java.util.Optional;
 @RestController
 
 public class UsuarioController {
-@Autowired
+    @Autowired
     private UsuarioServices usuarioServices;
 
-@GetMapping(path = "/USUARIO_TB")
+    @GetMapping(path = "/USUARIO_TB")
     public List<UsuarioModel> buscarUsuario() {
-return usuarioServices.buscarTodos();
-}
-@GetMapping(path = "/USUARIO_TB/{id}")
+        return usuarioServices.buscarTodos();
+    }
+
+    @GetMapping(path = "/USUARIO_TB/{id}")
 
     public Optional<UsuarioModel> buscarUserId(@PathVariable long id) {
-    return usuarioServices.buscarID(id);
-}
+        return usuarioServices.buscarID(id);
+    }
 
-@PostMapping(path = "/USUARIO_TB")
-    public UsuarioModel cadastrarUser()
+    @PostMapping(path = "/USUARIO_TB")
+    public UsuarioModel cadastrarUser(@RequestBody UsuarioModel usuarioModel) {
+        return usuarioServices.cadastrarUsuario(usuarioModel);
+    }
+
+
+    @PutMapping(path = "/USUARIO_TB/{id}")
+    public UsuarioModel alterarUser(@RequestBody UsuarioModel usuarioModel @PathVariable) {
+        return usuarioServices.alteraUsuario(usuarioModel);
+    }
+
+    @DeleteMapping(path = "/usuario_tb/{id}")
+    public void deletarUsuario(@PathVariable long id) {
+        usuarioServices.deletarUser();
+    }
 }

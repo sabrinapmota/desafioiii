@@ -23,11 +23,14 @@ public class EnderecoModel {
     @Column(length = 100, nullable = false)
     String lougradouro;
 
+    @Column(length = 4, nullable = false)
+        private String numero;
+
     @Column(length = 11, nullable = false)
     private String cep;
+    @Column(length = 20, nullable = false)
+private  String bairro;
 
     @Column(length = 100, nullable = false)
     private String pontoReferencia;
-}
-
 }

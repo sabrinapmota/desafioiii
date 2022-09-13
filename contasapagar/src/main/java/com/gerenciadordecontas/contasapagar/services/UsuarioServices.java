@@ -40,5 +40,8 @@ public class UsuarioServices {
 
         return usuarioRepository.save(usuarioModel);
     }
+    public void deletarUser(long id) {
+        usuarioRepository.deleteById(id);
+    }
 
 }
