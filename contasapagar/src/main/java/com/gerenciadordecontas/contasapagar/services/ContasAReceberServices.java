@@ -22,7 +22,7 @@ public class ContasAReceberServices {
     }
 
     public ContasAReceberModel cadastrarConta(ContasAReceberModel contasAReceberModel) {
-        contasAReceberModel.getContaAReceberID();
+        contasAReceberModel.getCodigo();
         contasAReceberModel.getDataRecebimento();
         contasAReceberModel.getDataVencimento();
         contasAReceberModel.getRecebimento();

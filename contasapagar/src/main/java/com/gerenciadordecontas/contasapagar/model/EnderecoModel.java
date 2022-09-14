@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class EnderecoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEndereco;
+    private long codigo;
 
     @Column(length = 100, nullable = false)
     String lougradouro;

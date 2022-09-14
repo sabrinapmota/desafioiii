@@ -3,10 +3,8 @@ package com.gerenciadordecontas.contasapagar.model;
 import com.gerenciadordecontas.contasapagar.model.enums.Status;
 import com.gerenciadordecontas.contasapagar.model.enums.Tipo;
 import lombok.*;
-import org.hibernate.tool.schema.extract.spi.TableInformation;
 
 import javax.persistence.*;
-import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class CidadeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCidade;
+    private Long codigo;
 
     @Column(length = 40, nullable = false)
     private String nomeCidade
