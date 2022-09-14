@@ -13,7 +13,7 @@ public class CidadeController {
     @Autowired
     private CidadeServices cidadeServices;
 
-    @GetMapping(path = "/CIDADE_TB"s)
+    @GetMapping(path = "/CIDADE_TB"  s)
 
     public List<CidadeModel>
     buscarCidade() {

@@ -1,9 +1,7 @@
 package com.gerenciadordecontas.contasapagar.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -19,7 +17,7 @@ import java.time.LocalDate;
 public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long codigo;
     @Column(length = 20, nullable = false)
     private String nome;
     @Column(length = 10, nullable = false)
