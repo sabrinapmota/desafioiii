@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class EstadoModel {
 @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
 
 @Column(length = 2, nullable = false)
     private String uf;

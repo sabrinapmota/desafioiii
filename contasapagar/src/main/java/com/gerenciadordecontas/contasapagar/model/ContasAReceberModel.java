@@ -7,6 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -17,7 +18,8 @@ import java.time.LocalDate;
 public class ContasAReceberModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
+
     @Column(length = 10, nullable = false)
     private String status;
 
@@ -27,15 +29,28 @@ public class ContasAReceberModel {
     @Column(length = 10, nullable = false)
     private BigDecimal valorRecebido;
 
-private  BigDecimal valorFinal;
+    private BigDecimal valorFinal;
 
-    @Column(length = 8, nullable = false)
+    @Column(, nullable = false)
     private LocalDate dataVencimento;
+    private LocalDateTime dataRecebimento;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private UsuarioModel usuarioModel;
 
-    @Column(length = 8, nullable = false)
-    private LocalDate dataRecebimento;
-
-@Column(length = 20, nullable = false)
+    @Column(nullable = false)
     private TipoRecebimento tipoRecebimento;
-private RecebimentosAlugueis recebimentosAlugueis;
+    private RecebimentosAlugueis recebimentosAlugueis;
+
+    public ContasAReceberModel(String status, String recebimento, BigDecimal valorRecebido, BigDecimal valorFinal, TipoRecebimento tipoRecebimento, RecebimentosAlugueis recebimentosAlugueis, LocalDate dataVencimento, LocalDateTime dataRecebimento, UsuarioModel usuarioModel) {
+        this.status = status;
+        this.recebimento = recebimento;
+        this.valorRecebido = valorRecebido;
+        this.valorFinal = valorFinal;
+        this.dataRecebimento = dataRecebimento;
+        this.dataVencimento = dataVencimento;
+        this.tipoRecebimento = tipoRecebimento;
+        this.recebimentosAlugueis = recebimentosAlugueis;
+        this.usuarioModel = usuarioModel;
+    }
 }

@@ -24,6 +24,7 @@ public class ContasAReceberController {
         return contasAReceberServices.buscarID(id);
     }
 
+
     @PostMapping(path = "/TB_CONTAS_A_RECEBER")
     public ContasAReceberModel cadastrarConta(@RequestBody ContasAReceberModel contasAReceberModel) {
         return contasAReceberServices.cadastrarConta(contasAReceberModel);

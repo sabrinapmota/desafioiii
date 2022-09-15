@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
     @Column(length = 20, nullable = false)
     private String nome;
     @Column(length = 10, nullable = false)
