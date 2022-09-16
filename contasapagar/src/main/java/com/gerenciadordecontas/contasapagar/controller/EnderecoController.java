@@ -27,7 +27,8 @@ public class EnderecoController {
     @GetMapping(path = "/ENDERECO_TB/{id}")
 
     public Optional<EnderecoModel> buscarID(@PathVariable long id) {
-        enderecoServices.buscarId(id);
+return         enderecoServices.buscarId(id);
+
     }
 
     @PostMapping(path = "/ENDERECO_TB")

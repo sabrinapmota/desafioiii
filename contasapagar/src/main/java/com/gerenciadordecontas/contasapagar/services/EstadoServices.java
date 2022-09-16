@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.awt.desktop.OpenFilesEvent;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
-public class EstadoServices() {
+public class EstadoServices {
     @Autowired
     private IEstadoRepository estadoRepository;
 
@@ -18,13 +19,13 @@ public class EstadoServices() {
         return estadoRepository.findAll();
     }
 
-    public OpenFilesEvent<EstadoModel> buscarID(Long id) {
+    public Optional <EstadoModel> buscarID(Long id) {
         return estadoRepository.findById(id);
     }
 
     public EstadoModel cadastrarEstado(EstadoModel estadoModel) {
 
-        estadoModel.getIdEstadoID();
+        estadoModel.getId();
         estadoModel.getUf();
         estadoModel.getNomeDestado();
         return estadoRepository.save(estadoModel);

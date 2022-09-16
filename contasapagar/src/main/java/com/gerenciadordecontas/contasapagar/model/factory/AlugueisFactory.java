@@ -15,7 +15,7 @@ public class AlugueisFactory {
     } else if (contasAReceberModel.getRecebimentosAlugueis().equals(RecebimentosAlugueis.ATRASO)) {
         return  new CalculoAluguelAtraso();
     } else {
-        return null
+        return null;
     }
     }
 

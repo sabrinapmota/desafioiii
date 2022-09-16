@@ -17,10 +17,10 @@ public class EnderecoServices {
     }
 
 public Optional<EnderecoModel> buscarId(long id) {
-        return enderecoRepository.findById();
+        return enderecoRepository.findById(id);
 }
 public EnderecoModel cadastrarEndereco(EnderecoModel enderecoModel) {
-        enderecoModel.getIdEndereco();
+        enderecoModel.getCodigo();
     enderecoModel.getCep();
     enderecoModel.getLougradouro();
 enderecoModel.getNumero();
@@ -30,7 +30,7 @@ enderecoModel.getPontoReferencia();
 return enderecoRepository.save(enderecoModel);
 }
 public EnderecoModel alterarEndereco(EnderecoModel enderecoModel) {
-        return enderecoModel.getCep();
+         enderecoModel.getCep();
         enderecoModel.getLougradouro();
         enderecoModel.getNumero();
         enderecoModel.getBairro();
@@ -40,6 +40,6 @@ public EnderecoModel alterarEndereco(EnderecoModel enderecoModel) {
 }
 
 public void deletarendereco(long id) {
-        return enderecoRepository.deleteById(id);
+         enderecoRepository.deleteById(id);
 }
 }

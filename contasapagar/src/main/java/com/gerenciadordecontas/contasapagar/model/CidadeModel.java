@@ -18,5 +18,5 @@ public class CidadeModel {
     private Long codigo;
 
     @Column(length = 40, nullable = false)
-    private String nomeCidade
+    private String nomeCidade;
 }

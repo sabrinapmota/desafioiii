@@ -27,15 +27,13 @@ public class EstadoController {
 
     @PostMapping(path = "/ESTADO_TB")
 
-    public List<EstadoModel> cadastrarEstado(@RequestBody EstadoModel estadoModel) {
+    public EstadoModel cadastrarEstado(@RequestBody EstadoModel estadoModel) {
         return estadoServices.cadastrarEstado(estadoModel);
     }
 
     @PutMapping(path = "/ESTADO_TB/{id}")
 
-    public EstadoModel estadoModel
-
-    alteraEstado(@RequestBody EstadoModel estadoModel, @PathVariable Long id) {
+public EstadoModel    alteraEstado(@RequestBody EstadoModel estadoModel, @PathVariable Long id) {
         return estadoServices.alterarEstado(estadoModel);
     }
 

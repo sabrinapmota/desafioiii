@@ -13,7 +13,7 @@ public class CidadeController {
     @Autowired
     private CidadeServices cidadeServices;
 
-    @GetMapping(path = "/CIDADE_TB"  s)
+    @GetMapping(path = "/CIDADE_TB")
 
     public List<CidadeModel>
     buscarCidade() {
@@ -29,7 +29,7 @@ public class CidadeController {
     @PostMapping(path = "/CIDADE_TB")
     public CidadeModel cadastrarCidade(@RequestBody CidadeModel cidadeModel) {
 
-        return cidadeServices.cadastrarCidade()
+        return cidadeServices.cadastrarCidade(cidadeModel);
     }
 
     @PutMapping(path = "/CIDADE_TB")

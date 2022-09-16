@@ -22,7 +22,7 @@ public class CidadeServices {
     }
 
     public CidadeModel cadastrarCidade(CidadeModel cidadeModel) {
-        cidadeModel.getIdCidade();
+        cidadeModel.getCodigo();
         cidadeModel.getNomeCidade();
 
         return icidadeRepository.save(cidadeModel);
@@ -31,7 +31,7 @@ public class CidadeServices {
     public CidadeModel alterarCidade(CidadeModel cidadeModel) {
         cidadeModel.getNomeCidade();
 
-        return icidadeRepository.save();
+        return icidadeRepository.save(cidadeModel);
     }
 
     public void deletarCidade(Long id) {

@@ -1,7 +1,9 @@
 package com.gerenciadordecontas.contasapagar.controller;
 
 import com.gerenciadordecontas.contasapagar.model.ContasAReceberModel;
+import com.gerenciadordecontas.contasapagar.model.factory.AlugueisFactory;
 import com.gerenciadordecontas.contasapagar.services.ContasAReceberServices;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,14 +28,14 @@ public class ContasAReceberController {
 
 
     @PostMapping(path = "/TB_CONTAS_A_RECEBER")
-    public ContasAReceberModel cadastrarConta(@RequestBody ContasAReceberModel contasAReceberModel) {
-        return contasAReceberServices.cadastrarConta(contasAReceberModel);
+    public ContasAReceberModel cadastrarConta(@RequestBody ContasAReceberModel contasAReceberModel, AlugueisFactory alugueisFactory) {
+        return contasAReceberServices.cadastrarConta(contasAReceberModel, alugueisFactory);
     }
 
     @PutMapping(path = "/TB_CONTAS_A_RECEBER/{id}")
 
     public ContasAReceberModel alteraConta(@RequestBody ContasAReceberModel contasAReceberModel, @PathVariable Long id) {
-        return contasAReceberServices.alterarConta(contasAReceberModel);
+        return contasAReceberServices.alterar(contasAReceberModel);
     }
 
     @DeleteMapping(path = "/TB_CONTAS_A_RECEBER/{id}")

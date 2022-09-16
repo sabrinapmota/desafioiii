@@ -31,7 +31,7 @@ public class ContasAReceberModel {
 
     private BigDecimal valorFinal;
 
-    @Column(, nullable = false)
+    @Column(nullable = false)
     private LocalDate dataVencimento;
     private LocalDateTime dataRecebimento;
     @ManyToOne

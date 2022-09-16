@@ -32,12 +32,12 @@ public class UsuarioController {
 
 
     @PutMapping(path = "/USUARIO_TB/{id}")
-    public UsuarioModel alterarUser(@RequestBody UsuarioModel usuarioModel @PathVariable) {
+    public UsuarioModel alterarUser(@RequestBody UsuarioModel usuarioModel, @PathVariable Long id) {
         return usuarioServices.alteraUsuario(usuarioModel);
     }
 
     @DeleteMapping(path = "/usuario_tb/{id}")
     public void deletarUsuario(@PathVariable long id) {
-        usuarioServices.deletarUser();
+        usuarioServices.deletarUser(id);
     }
 }

@@ -2,6 +2,7 @@ package com.gerenciadordecontas.contasapagar.services;
 
 import com.gerenciadordecontas.contasapagar.model.ContasAReceberModel;
 import com.gerenciadordecontas.contasapagar.model.enums.RecebimentosAlugueis;
+import com.gerenciadordecontas.contasapagar.model.enums.Status;
 import com.gerenciadordecontas.contasapagar.model.enums.TipoRecebimento;
 import com.gerenciadordecontas.contasapagar.model.factory.AlugueisFactory;
 import com.gerenciadordecontas.contasapagar.repository.IContasAReceberRepository;
@@ -32,12 +33,12 @@ public class ContasAReceberServices {
     }
 
     public List<ContasAReceberModel> buscarTipo(TipoRecebimento tipoRecebimento) {
-        return contasAReceberRepository.findByTipoRecebido(tipoRecebimento);
+        return contasAReceberRepository.findByTipoRecebimento(tipoRecebimento);
     }
 
     public List<ContasAReceberModel> buscarVincimento(String dataVencimento) {
         LocalDate localDate = LocalDate.parse(dataVencimento);
-        return contasAReceberRepository.findByDataDeVencimento(localDate);
+        return contasAReceberRepository.findByDataVencimento(localDate);
     }
 
     public ContasAReceberModel cadastrarConta(ContasAReceberModel contasAReceberModel, AlugueisFactory alugueisFactory) {
@@ -51,7 +52,7 @@ public class ContasAReceberServices {
             } else {
                 contasAReceberModel.setRecebimentosAlugueis(RecebimentosAlugueis.EMDIA);
             }
-            BigDecimal resultado = alugueisFactory.calculoAloguel(contasAReceberModel.getValorRecebido());
+            BigDecimal resultado = alugueisFactory.calculoAloguel(contasAReceberModel).calcular(contasAReceberModel.getValorRecebido());
             contasAReceberModel.setValorFinal(resultado);
         }
         return contasAReceberRepository.save(contasAReceberModel);
@@ -61,10 +62,11 @@ public class ContasAReceberServices {
         if ("pago".equalsIgnoreCase(contasAReceberModel.getStatus())) {
             LocalDateTime dataAtual = LocalDateTime.now();
             contasAReceberModel.setDataRecebimento(dataAtual);
-        }
 
-        public void deletarconta (Long id) {
-            contasAReceberRepository.deleteById(id);
         }
+        return contasAReceberModel;
+         }
+    public void deletarconta (Long id) {
+        contasAReceberRepository.deleteById(id);
     }
 }
